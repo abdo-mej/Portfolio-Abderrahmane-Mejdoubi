@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Abderrahmane Mejdoubi</title>
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #18181b;
+      --card: #232328;
+      --accent: #e63946;
+      --text: #f1faee;
+      --text-secondary: #bfc9d1;
+      --shadow: 0 4px 32px #000a;
+      --radius: 20px;
+      --transition: 0.3s cubic-bezier(.5,1.5,.5,1);
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #18181b 60%, #e63946 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--card);
+      border-radius: var(--radius);
+      margin: 2rem auto 1.5rem auto;
+      max-width: 1100px;
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem 1.5rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      margin-bottom: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 12px #0006;
+      transition: transform 0.4s cubic-bezier(.5,1.5,.5,1);
+    }
+    .profile-img:hover { transform: scale(1.07) rotate(-2deg);}
+    .title { font-size: 2.4rem; font-weight: 700; margin: 0.2rem 0 0.3rem 0; }
+    .subtitle { color: var(--accent); font-size: 1.15rem; margin-bottom: 1.2rem; }
+    nav {
+      margin: 0.7rem 0 0.5rem 0;
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--text-secondary);
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.05rem;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s, color 0.2s;
+      padding-bottom: 2px;
+    }
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    .socials {
+      margin: 1rem 0 0 0;
+      display: flex;
+      gap: 1rem;
+    }
+    .socials a {
+      color: var(--accent);
+      font-size: 1.7rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .socials a:hover { color: #fff; transform: scale(1.13);}
+    main { max-width: 1100px; margin: 0 auto; }
+    section {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      padding: 2.2rem 2rem;
+      animation: fadeInUp 0.8s;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #333;
+      padding-bottom: .5rem;
+    }
+    .services-list, .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin: 1.2rem 0;
+      list-style: none;
+      padding: 0;
+    }
+    .services-list li, .skills-list li {
+      background: #1e1e22;
+      color: var(--text-secondary);
+      padding: 1.1rem 1.5rem;
+      border-radius: 14px;
+      font-weight: 500;
+      min-width: 160px;
+      font-size: 1.03rem;
+      box-shadow: 0 2px 8px #0003;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .services-list li:hover, .skills-list li:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .skills-list .framework { font-size: 1.5rem; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .project-card {
+      background: #1e1e22;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #0005;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow 0.2s;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeInUp 0.7s;
+      position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 8px 32px #e639461a;
+    }
+    .project-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      background: #eaeaea;
+      border-bottom: 2px solid var(--accent);
+      transition: filter 0.2s;
+    }
+    .project-card:hover .project-img { filter: brightness(0.92) blur(1px);}
+    .project-content {
+      padding: 1.2rem 1rem 1rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .project-desc {
+      font-size: 1.02rem;
+      color: #bfc9d1;
+      margin-bottom: 0.8rem;
+    }
+    .project-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.5rem 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.2s;
+      margin-top: auto;
+    }
+    .project-btn:hover {
+      background: #fff;
+      color: var(--accent);
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(24,24,27,0.95);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s;
+    }
+    .modal-content {
+      background: #232328;
+      border-radius: 18px;
+      max-width: 540px;
+      width: 95vw;
+      padding: 2rem 2rem 1.2rem 2rem;
+      position: relative;
+      box-shadow: var(--shadow);
+      animation: popIn 0.3s;
+      color: var(--text);
+    }
+    @keyframes popIn {
+      from { transform: scale(0.89);}
+      to { transform: scale(1);}
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.2rem; right: 1.2rem;
+      font-size: 1.5rem;
+      color: var(--accent);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: #fff;}
+    .certificats-list {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      margin: 1rem 0;
+      list-style: disc inside;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 900px) {
+      main, header, section { padding: 1rem;}
+      .projects-grid { grid-template-columns: 1fr;}
+      .certificats-list { columns: 1;}
+    }
+    footer {
+      background: var(--card);
+      color: #fff;
+      text-align: center;
+      padding: 1.2rem 0;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 2rem;
+      box-shadow: 0 -2px 16px #0007;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:/Users/abder/Desktop/mon_image.png" alt="Photo de profil" class="profile-img">
+    <div class="title">Abderrahmane Mejdoubi</div>
+    <div class="subtitle">Développeur Web & Logiciel | Spécialiste Automatisation & Digitalisation</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#experience">Expérience</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#certificats">Certificats</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="socials">
+      <a href="https://www.instagram.com/abderahman_mejdoubi" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1Arnxa8NYA/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:abderrahmane.mejdoubi@gmail.com" target="_blank" title="Gmail"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <main>
+    <section id="services">
+      <h2>Services que je propose</h2>
+      <ul class="services-list">
+        <li><i class="fas fa-laptop-code"></i> Développement Web & Logiciel</li>
+        <li><i class="fas fa-database"></i> Automatisation & Digitalisation</li>
+        <li><i class="fas fa-users-cog"></i> Gestion de projet & Analyse</li>
+        <li><i class="fas fa-shield-alt"></i> Sécurité des données</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Expérience & Réalisations</h2>
+      <ul class="services-list">
+        <li>Stage - Développement Application Location de Voitures (LAHLAL CAR)</li>
+        <li>Stage - Application de Gestion de la Paie Multi-Sociétés (MULTICODE TECH)</li>
+        <li>PFE - Site Web Vitrine Menuisier</li>
+        <li>Projet - Application WPF Gestion Bons de Commande</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Compétences & Frameworks</h2>
+      <ul class="skills-list">
+        <li><i class="fab fa-html5 framework"></i> HTML5</li>
+        <li><i class="fab fa-css3-alt framework"></i> CSS3</li>
+        <li><i class="fab fa-js framework"></i> JavaScript</li>
+        <li><i class="fab fa-php framework"></i> PHP</li>
+        <li><i class="fas fa-database framework"></i> SQL/MySQL/SQL Server</li>
+        <li><i class="fab fa-java framework"></i> Java</li>
+        <li><i class="fas fa-code framework"></i> C++</li>
+        <li><i class="fas fa-copyright framework"></i> C# / .NET / WPF</li>
+        <li><i class="fab fa-bootstrap framework"></i> Bootstrap</li>
+        <li><i class="fab fa-react framework"></i> React</li>
+        <li><i class="fas fa-project-diagram framework"></i> UML, Merise</li>
+        <li><i class="fab fa-git-alt framework"></i> Git & GitHub</li>
+        <li><i class="fas fa-shield-alt framework"></i> Sécurité</li>
+        <li><i class="fas fa-chart-bar framework"></i> Reporting, Dashboard</li>
+        <li><i class="fab fa-windows framework"></i> Windows Desktop</li>
+        <li><i class="fas fa-file-excel framework"></i> Excel Avancé</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projets récents</h2>
+      <div class="projects-grid">
+        <!-- Projet 1 -->
+        <div class="project-card" onclick="openModal(0)">
+          <img src="https://kadriluxurycar-fes.com/wp-content/uploads/2023/04/location-voiture-de-luxe-Fes.jpeg" alt="Gestion Location Voitures" class="project-img">
+          <div class="project-content">
+            <div class="project-title">Application Location de Voitures</div>
+            <div class="project-desc">Application web complète pour digitaliser la gestion d'une agence de location.</div>
+            <button class="project-btn">Voir détails</button>
+          </div>
+        </div>
+        <!-- Projet 2 -->
+        <div class="project-card" onclick="openModal(1)">
+          <img src="https://www.orientation.ch/web_file/getbb?id=8268&mime=image/jpeg&original_name=Menuisier_01_TPA.jpg" alt="Site Menuisier" class="project-img">
+          <div class="project-content">
+            <div class="project-title">PFE : Site Web Menuisier</div>
+            <div class="project-desc">Site web vitrine moderne pour un artisan menuisier.</div>
+            <button class="project-btn">Voir détails</button>
+          </div>
+        </div>
+        <!-- Projet 3 -->
+        <div class="project-card" onclick="openModal(2)">
+          <img src="https://www.softyflow.io/wp-content/uploads/2021/12/gestion_des_commandes.png" alt="Gestion Bon de Commande" class="project-img">
+          <div class="project-content">
+            <div class="project-title">Gestion des Bons de Commande</div>
+            <div class="project-desc">Application WPF C# multi-utilisateurs avec SQL Server.</div>
+            <button class="project-btn">Voir détails</button>
+          </div>
+        </div>
+        <!-- Projet 4 -->
+        <div class="project-card" onclick="openModal(3)">
+          <img src="https://minthr.com/media/avnbllyt/fichepai.png" alt="Gestion Paie Multi-Sociétés" class="project-img">
+          <div class="project-content">
+            <div class="project-title">Gestion de la Paie Multi-Sociétés</div>
+            <div class="project-desc">Application C#/.NET pour automatiser la paie de plusieurs sociétés.</div>
+            <button class="project-btn">Voir détails</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals for detailed project descriptions -->
+    <div class="modal" id="modal0">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal(0)">&times;</span>
+        <h3>Application de gestion de location de voitures</h3>
+        <p>
+          <strong>Contexte :</strong> Développée lors d’un stage chez LAHLAL CAR, cette application répond à la nécessité de digitaliser et centraliser la gestion des locations.<br><br>
+          <strong>Objectifs :</strong> Automatiser la gestion des clients, véhicules, réservations, contrats, paiements et reporting.<br>
+          <strong>Fonctionnalités principales :</strong>
+          <ul>
+            <li>Gestion complète des clients (ajout, modification, recherche, suppression)</li>
+            <li>Gestion du parc véhicules (entretien, disponibilité, historique)</li>
+            <li>Création, modification, annulation des réservations avec calcul automatique du coût</li>
+            <li>Génération et archivage des contrats de location au format PDF</li>
+            <li>Sécurité des accès, gestion des profils utilisateurs</li>
+            <li>Exportation, impression des rapports et documents</li>
+          </ul>
+          <strong>Bénéfices :</strong> Automatisation, réduction des erreurs, gain de temps, meilleure expérience client, sécurité renforcée.<br>
+          <strong>Stack :</strong> HTML, CSS, JavaScript, PHP, SQL, Bootstrap.
+        </p>
+      </div>
+    </div>
+    <div class="modal" id="modal1">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal(1)">&times;</span>
+        <h3>PFE : Site Web Vitrine Menuisier</h3>
+        <p>
+          <strong>Contexte :</strong> Projet de fin d’études pour un artisan menuisier souhaitant valoriser son activité en ligne.<br><br>
+          <strong>Objectifs :</strong> Offrir une vitrine digitale avec galerie de réalisations, formulaire de contact, et optimisation SEO.<br>
+          <strong>Fonctionnalités principales :</strong>
+          <ul>
+            <li>Présentation des services et réalisations (galerie photos, descriptions)</li>
+            <li>Formulaire de contact sécurisé</li>
+            <li>Responsive design, navigation fluide</li>
+            <li>Optimisation SEO (balises, rapidité, accessibilité)</li>
+            <li>paiements en ligne</li>
+          </ul>
+          <strong>Bénéfices :</strong> Acquisition de nouveaux clients, image professionnelle, visibilité accrue.<br>
+          <strong>Stack :</strong> HTML, CSS, JavaScript, PHP, Bootstrap,ZeroBounce,PhpMailer,Stripe.
+        </p>
+      </div>
+    </div>
+    <div class="modal" id="modal2">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal(2)">&times;</span>
+        <h3>Application de gestion des bons de commande</h3>
+        <p>
+          <strong>Contexte :</strong> Développement d’une application desktop WPF pour la gestion centralisée des bons de commande, règlements, factures, prestations et utilisateurs.<br><br>
+          <strong>Objectifs :</strong> Centraliser, sécuriser et automatiser la gestion des achats et prestations.<br>
+          <strong>Fonctionnalités principales :</strong>
+          <ul>
+            <li>Gestion multi-utilisateurs avec droits d’accès</li>
+            <li>Création, suivi et validation des bons de commande</li>
+            <li>Gestion des règlements, factures, prestations</li>
+            <li>Interface moderne, navigation dynamique (menus animés, transitions)</li>
+            <li>Reporting et export PDF/Excel</li>
+          </ul>
+          <strong>Bénéfices :</strong> Centralisation, automatisation, sécurité, traçabilité des opérations.<br>
+          <strong>Stack :</strong> C#, WPF, SQL Server, MVVM.
+        </p>
+      </div>
+    </div>
+    <div class="modal" id="modal3">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal(3)">&times;</span>
+        <h3>Application de gestion de la paie multi-sociétés</h3>
+        <p>
+          <strong>Contexte :</strong> Réalisée lors d’un stage chez MULTICODE TECH, cette application vise à centraliser et automatiser la paie pour plusieurs sociétés.<br><br>
+          <strong>Objectifs :</strong> Gestion multi-sociétés, automatisation des traitements de paie, sécurité des accès, conformité légale.<br>
+          <strong>Fonctionnalités principales :</strong>
+          <ul>
+            <li>Gestion des sociétés, salariés, contrats, bulletins de paie</li>
+            <li>Automatisation des calculs (salaires, cotisations, impôts)</li>
+            <li>Gestion des droits utilisateurs (RBAC)</li>
+            <li>Génération des bulletins, reporting, export PDF/Excel</li>
+            <li>Paramétrage flexible, mises à jour réglementaires</li>
+          </ul>
+          <strong>Bénéfices :</strong> Gain de temps, réduction des erreurs, conformité, sécurité, évolutivité.<br>
+          <strong>Stack :</strong> C#, .NET, WPF, SQL Server, GitHub.
+        </p>
+      </div>
+    </div>
+
+    <section id="certificats">
+      <h2>Certificats</h2>
+      <ul class="certificats-list">
+        <li>Java (plusieurs formations)</li>
+        <li>C++</li>
+        <li>CSS</li>
+        <li>Excel</li>
+        <li>HTML5</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>SQL</li>
+        <li>Python</li>
+        <li>Git & GitHub</li>
+        <li>WPF</li>
+        <li>Bootstrap</li>
+        <li>React</li>
+        <li>Gestion de projet</li>
+        <li>… et bien plus</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email :</strong> <a href="mailto:abderrahmane.mejdoubi@gmail.com">abderrahmane.mejdoubi@gmail.com</a><br>
+        <strong>Téléphone :</strong> 06 XX XX XX XX
+      </p>
+      <div class="socials">
+        <a href="https://www.instagram.com/abderahman_mejdoubi" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1Arnxa8NYA/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:abderrahmane.mejdoubi@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Abderrahmane Mejdoubi – Portfolio personnel
+  </footer>
+
+  <script>
+    // Modal logic for project details
+    function openModal(idx) {
+      document.getElementById('modal'+idx).style.display = 'flex';
+    }
+    function closeModal(idx) {
+      document.getElementById('modal'+idx).style.display = 'none';
+    }
+    // Close modal on click outside content
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if(e.target === modal) modal.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
