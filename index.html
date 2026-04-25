@@ -6,10 +6,10 @@
   <meta name="description" content="Portfolio professionnel d'Abderrahmane Mejdoubi, étudiant en Licence Informatique Appliquée, développeur web et logiciel à la recherche d'une alternance." />
   <title>Abderrahmane Mejdoubi | Portfolio</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -19,14 +19,14 @@
       --primary: #0f172a;
       --secondary: #1e293b;
       --accent: #2563eb;
-      --accent-2: #38bdf8;
+      --accent-light: #38bdf8;
       --bg: #f8fafc;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
       --border: #e2e8f0;
-      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-      --radius: 22px;
+      --shadow: 0 22px 55px rgba(15, 23, 42, 0.09);
+      --radius: 24px;
       --transition: 0.3s ease;
     }
 
@@ -53,28 +53,24 @@
       text-decoration: none;
     }
 
-    ul {
-      list-style: none;
-    }
-
     img {
       max-width: 100%;
       display: block;
     }
 
     .container {
-      width: min(1150px, 92%);
+      width: min(1160px, 92%);
       margin: auto;
     }
 
-    /* NAVBAR */
+    /* ================= NAVBAR ================= */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 999;
-      background: rgba(255, 255, 255, 0.86);
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
@@ -88,9 +84,9 @@
 
     .logo {
       font-size: 1.25rem;
-      font-weight: 800;
+      font-weight: 900;
+      letter-spacing: -0.04em;
       color: var(--primary);
-      letter-spacing: -0.03em;
     }
 
     .logo span {
@@ -100,10 +96,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      font-size: 0.95rem;
-      font-weight: 600;
+      gap: 26px;
       color: var(--muted);
+      font-weight: 700;
+      font-size: 0.93rem;
     }
 
     .nav-links a {
@@ -111,62 +107,48 @@
       transition: var(--transition);
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: var(--transition);
-    }
-
     .nav-links a:hover {
       color: var(--accent);
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
     .nav-btn {
-      padding: 10px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 17px;
       border-radius: 999px;
+      color: #fff !important;
       background: var(--accent);
-      color: white !important;
-      font-size: 0.9rem;
-      font-weight: 700;
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
+      transition: var(--transition);
     }
 
     .nav-btn:hover {
-      transform: translateY(-2px);
       background: #1d4ed8;
+      transform: translateY(-2px);
     }
 
     .menu-toggle {
       display: none;
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       cursor: pointer;
       color: var(--primary);
     }
 
-    /* HERO */
+    /* ================= HERO ================= */
     .hero {
       min-height: 100vh;
-      padding: 130px 0 70px;
+      padding: 130px 0 80px;
       background:
-        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.12), transparent 32%),
-        radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.16), transparent 32%),
+        radial-gradient(circle at 10% 18%, rgba(37, 99, 235, 0.13), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(56, 189, 248, 0.15), transparent 30%),
         linear-gradient(180deg, #ffffff, #f8fafc);
-      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 60px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 62px;
       align-items: center;
     }
 
@@ -174,21 +156,21 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      padding: 8px 14px;
-      border: 1px solid rgba(37, 99, 235, 0.18);
-      background: rgba(37, 99, 235, 0.06);
-      color: var(--accent);
+      padding: 8px 15px;
       border-radius: 999px;
+      background: rgba(37, 99, 235, 0.07);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      color: var(--accent);
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      font-size: clamp(2.45rem, 5vw, 4.75rem);
       line-height: 1.05;
-      letter-spacing: -0.06em;
-      font-weight: 800;
+      letter-spacing: -0.065em;
+      font-weight: 900;
       color: var(--primary);
       margin-bottom: 16px;
     }
@@ -200,7 +182,7 @@
     .hero-subtitle {
       font-size: clamp(1.1rem, 2vw, 1.45rem);
       color: var(--secondary);
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
@@ -211,7 +193,7 @@
     .hero-text {
       color: var(--muted);
       font-size: 1.02rem;
-      max-width: 620px;
+      max-width: 640px;
       margin-bottom: 28px;
     }
 
@@ -229,16 +211,17 @@
       gap: 10px;
       padding: 13px 22px;
       border-radius: 999px;
-      font-weight: 700;
       font-size: 0.95rem;
-      transition: var(--transition);
+      font-weight: 800;
+      border: none;
       cursor: pointer;
+      transition: var(--transition);
     }
 
     .btn-primary {
       background: var(--accent);
       color: white;
-      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.26);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.26);
     }
 
     .btn-primary:hover {
@@ -247,14 +230,14 @@
     }
 
     .btn-outline {
-      border: 1px solid var(--border);
       background: white;
+      border: 1px solid var(--border);
       color: var(--primary);
     }
 
     .btn-outline:hover {
-      border-color: var(--accent);
       color: var(--accent);
+      border-color: rgba(37, 99, 235, 0.35);
       transform: translateY(-3px);
     }
 
@@ -264,8 +247,8 @@
     }
 
     .socials a {
-      width: 42px;
-      height: 42px;
+      width: 43px;
+      height: 43px;
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -273,54 +256,89 @@
       color: var(--secondary);
       border: 1px solid var(--border);
       transition: var(--transition);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
     }
 
     .socials a:hover {
       background: var(--accent);
       color: white;
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.24);
     }
 
-    .hero-card {
-      background: var(--card);
+    /* Photo bien présentée dans cercle */
+    .profile-card {
+      background: white;
       border: 1px solid var(--border);
       border-radius: 34px;
+      padding: 30px;
       box-shadow: var(--shadow);
-      padding: 28px;
       position: relative;
       overflow: hidden;
     }
 
-    .hero-card::before {
+    .profile-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 35%);
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 38%);
       pointer-events: none;
     }
 
-    .photo-box {
+    .photo-circle {
+      width: 310px;
+      height: 310px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      padding: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      box-shadow: 0 24px 60px rgba(37, 99, 235, 0.22);
       position: relative;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #eff6ff;
-      border: 1px solid #dbeafe;
+      z-index: 1;
     }
 
-    .photo-box img {
+    .photo-circle-inner {
       width: 100%;
-      height: 470px;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #eff6ff;
+      border: 7px solid white;
+    }
+
+    .photo-circle-inner img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center top;
     }
 
+    .profile-summary {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .profile-summary h2 {
+      font-size: 1.55rem;
+      color: var(--primary);
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .profile-summary p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
     .quick-info {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
       margin-top: 18px;
-      position: relative;
     }
 
     .info-item {
@@ -328,22 +346,23 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 13px;
+      text-align: left;
     }
 
     .info-item strong {
       display: block;
       color: var(--primary);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .info-item span {
       color: var(--muted);
-      font-size: 0.84rem;
+      font-size: 0.83rem;
     }
 
-    /* SECTIONS */
+    /* ================= SECTIONS ================= */
     section {
-      padding: 80px 0;
+      padding: 82px 0;
     }
 
     .section-head {
@@ -353,15 +372,15 @@
 
     .section-kicker {
       color: var(--accent);
-      font-weight: 800;
+      font-size: 0.8rem;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      font-size: 0.8rem;
       margin-bottom: 8px;
     }
 
     .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      font-size: clamp(1.85rem, 3vw, 2.65rem);
       line-height: 1.1;
       letter-spacing: -0.04em;
       color: var(--primary);
@@ -369,19 +388,13 @@
     }
 
     .section-desc {
-      max-width: 720px;
+      max-width: 760px;
       margin: auto;
       color: var(--muted);
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
     .card {
-      background: var(--card);
+      background: white;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 26px;
@@ -391,6 +404,12 @@
 
     .card:hover {
       transform: translateY(-5px);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
     .card-icon {
@@ -417,17 +436,6 @@
       font-size: 0.95rem;
     }
 
-    .card ul {
-      display: grid;
-      gap: 7px;
-    }
-
-    .card li i {
-      color: var(--accent);
-      margin-right: 7px;
-    }
-
-    /* SKILLS */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -468,10 +476,61 @@
       color: #334155;
       border: 1px solid #e2e8f0;
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* EXPERIENCE */
+    /* ================= CV VIEW ================= */
+    .cv-section {
+      background: #ffffff;
+    }
+
+    .cv-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .cv-actions {
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: #f8fafc;
+      flex-wrap: wrap;
+    }
+
+    .cv-actions strong {
+      color: var(--primary);
+      font-size: 1.05rem;
+    }
+
+    .cv-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cv-frame {
+      width: 100%;
+      height: 760px;
+      border: none;
+      display: block;
+      background: #f1f5f9;
+    }
+
+    .cv-note {
+      padding: 14px 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border-top: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    /* ================= TIMELINE ================= */
     .timeline {
       position: relative;
       max-width: 980px;
@@ -535,13 +594,13 @@
 
     .date {
       color: var(--accent);
-      font-weight: 800;
+      font-weight: 900;
       white-space: nowrap;
       font-size: 0.92rem;
     }
 
     .role {
-      font-weight: 700;
+      font-weight: 800;
       color: var(--secondary);
       margin-bottom: 10px;
     }
@@ -550,6 +609,7 @@
       display: grid;
       gap: 6px;
       color: var(--muted);
+      list-style: none;
     }
 
     .experience-card li::before {
@@ -559,7 +619,7 @@
       margin-right: 8px;
     }
 
-    /* PROJECTS */
+    /* ================= PROJECTS ================= */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -607,7 +667,7 @@
       background: #eff6ff;
       color: var(--accent);
       font-size: 0.78rem;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 14px;
     }
 
@@ -623,22 +683,6 @@
       margin-bottom: 14px;
     }
 
-    .project-links {
-      display: flex;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .mini-link {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    /* FORMATION */
     .education-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -656,7 +700,7 @@
     .education-card span {
       display: inline-block;
       color: var(--accent);
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 8px;
     }
 
@@ -671,7 +715,7 @@
       font-size: 0.92rem;
     }
 
-    /* CONTACT */
+    /* ================= CONTACT ================= */
     .contact-box {
       background: linear-gradient(135deg, #0f172a, #1e3a8a);
       color: white;
@@ -712,7 +756,7 @@
     }
 
     .contact-list i {
-      color: var(--accent-2);
+      color: var(--accent-light);
       width: 20px;
     }
 
@@ -723,8 +767,8 @@
       font-size: 0.9rem;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 950px) {
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
       .contact-box {
@@ -740,8 +784,9 @@
         grid-template-columns: 1fr;
       }
 
-      .photo-box img {
-        height: 420px;
+      .photo-circle {
+        width: 270px;
+        height: 270px;
       }
     }
 
@@ -750,7 +795,7 @@
         position: fixed;
         top: 76px;
         right: -100%;
-        width: 80%;
+        width: 82%;
         height: calc(100vh - 76px);
         flex-direction: column;
         justify-content: flex-start;
@@ -769,12 +814,8 @@
         display: block;
       }
 
-      .nav-btn {
-        display: inline-flex;
-      }
-
       .hero {
-        padding-top: 110px;
+        padding-top: 112px;
       }
 
       .quick-info,
@@ -792,12 +833,19 @@
       }
 
       .contact-box {
-        padding: 26px;
+        padding: 28px;
+      }
+
+      .cv-frame {
+        height: 540px;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Important : mets ton CV exactement ici : CV/Abderrahmane_Mejdoubi_CV.pdf -->
+  <!-- Important : mets ta photo exactement ici : image/mon_image.png -->
+
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-content">
@@ -809,10 +857,8 @@
         <a href="#competences">Compétences</a>
         <a href="#experiences">Expériences</a>
         <a href="#projets">Projets</a>
+        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
-        <a class="nav-btn" href="cv/Abderrahmane_Mejdoubi_CV.pdf" target="_blank">
-          <i class="fa-solid fa-download"></i> CV
-        </a>
       </nav>
 
       <div class="menu-toggle" id="menuToggle">
@@ -846,9 +892,13 @@
             <i class="fa-solid fa-paper-plane"></i>
             Me contacter
           </a>
-          <a href="#projets" class="btn btn-outline">
-            <i class="fa-solid fa-folder-open"></i>
-            Voir mes projets
+          <a href="#cv" class="btn btn-outline">
+            <i class="fa-solid fa-file-lines"></i>
+            Voir mon CV
+          </a>
+          <a href="CV/Abderrahmane_Mejdoubi_CV.pdf" download class="btn btn-outline">
+            <i class="fa-solid fa-download"></i>
+            Télécharger CV
           </a>
         </div>
 
@@ -868,16 +918,19 @@
         </div>
       </div>
 
-      <div class="hero-card">
-        <div class="photo-box">
-          <!-- Remplace ce chemin par ton image finale -->
-          <img src="image/mon_image.png" alt="Photo professionnelle d'Abderrahmane Mejdoubi" />
-        </div>
-        <div class="quick-info">
-          <div class="info-item">
-            <strong>Profil</strong>
-            <span>Licence Informatique Appliquée</span>
+      <div class="profile-card">
+        <div class="photo-circle">
+          <div class="photo-circle-inner">
+            <img src="image/mon_image.png" alt="Photo professionnelle d'Abderrahmane Mejdoubi" />
           </div>
+        </div>
+
+        <div class="profile-summary">
+          <h2>Abderrahmane MEJDOUBI</h2>
+          <p>Étudiant en Informatique Appliquée</p>
+        </div>
+
+        <div class="quick-info">
           <div class="info-item">
             <strong>Objectif</strong>
             <span>Alternance web / logiciel</span>
@@ -887,7 +940,11 @@
             <span>Oujda, Maroc</span>
           </div>
           <div class="info-item">
-            <strong>Disponibilité</strong>
+            <strong>Formation</strong>
+            <span>Licence Informatique Appliquée</span>
+          </div>
+          <div class="info-item">
+            <strong>Mobilité</strong>
             <span>France / Remote</span>
           </div>
         </div>
@@ -900,7 +957,7 @@
     <div class="container">
       <div class="section-head">
         <p class="section-kicker">Profil</p>
-        <h2 class="section-title">Un profil orienté développement logiciel, web et systèmes d’information</h2>
+        <h2 class="section-title">Profil orienté développement logiciel, web et systèmes d’information</h2>
         <p class="section-desc">
           Mon objectif est d’intégrer une entreprise en alternance pour contribuer à des projets concrets, apprendre auprès d’une équipe expérimentée et renforcer mes compétences techniques.
         </p>
@@ -1000,9 +1057,6 @@
       <div class="section-head">
         <p class="section-kicker">Expériences</p>
         <h2 class="section-title">Expériences professionnelles & projets</h2>
-        <p class="section-desc">
-          Expériences alignées avec mon CV : applications desktop, web, automatisation, gestion métier et bases de données.
-        </p>
       </div>
 
       <div class="timeline">
@@ -1083,9 +1137,6 @@
       <div class="section-head">
         <p class="section-kicker">Portfolio</p>
         <h2 class="section-title">Projets principaux</h2>
-        <p class="section-desc">
-          Une sélection de projets qui montrent mes compétences en développement web, desktop, bases de données et automatisation.
-        </p>
       </div>
 
       <div class="projects-grid">
@@ -1096,10 +1147,7 @@
             Application desktop multi-utilisateurs développée pour STE LAHLAL SAMU PLUS, permettant la gestion des bons de commande, règlements, factures et reporting.
           </p>
           <div class="tags">
-            <span class="tag">C#</span>
-            <span class="tag">.NET</span>
-            <span class="tag">WPF</span>
-            <span class="tag">SQL Server</span>
+            <span class="tag">C#</span><span class="tag">.NET</span><span class="tag">WPF</span><span class="tag">SQL Server</span>
           </div>
         </article>
 
@@ -1110,10 +1158,7 @@
             Application permettant d’automatiser les traitements de paie, générer les bulletins, gérer les droits utilisateurs et produire des rapports personnalisés.
           </p>
           <div class="tags">
-            <span class="tag">C#</span>
-            <span class="tag">.NET</span>
-            <span class="tag">SQL Server</span>
-            <span class="tag">Reporting</span>
+            <span class="tag">C#</span><span class="tag">.NET</span><span class="tag">SQL Server</span><span class="tag">Reporting</span>
           </div>
         </article>
 
@@ -1124,12 +1169,7 @@
             Plateforme web responsive avec gestion des commandes, espace administrateur, catalogue de produits, validation d’e-mails et paiement sécurisé.
           </p>
           <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">Stripe</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Bootstrap</span><span class="tag">Stripe</span>
           </div>
         </article>
 
@@ -1140,13 +1180,44 @@
             Application web pour gérer les clients, véhicules, réservations, contrats et documents PDF, avec sécurisation des accès utilisateurs.
           </p>
           <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">PHP</span>
-            <span class="tag">SQL</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">SQL</span>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV VIEW + DOWNLOAD -->
+  <section id="cv" class="cv-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">CV</p>
+        <h2 class="section-title">Consulter et télécharger mon CV</h2>
+        <p class="section-desc">
+          Vous pouvez visualiser mon CV directement sur cette page, puis l’ouvrir ou le télécharger en PDF.
+        </p>
+      </div>
+
+      <div class="cv-box">
+        <div class="cv-actions">
+          <strong><i class="fa-solid fa-file-pdf"></i> Abderrahmane_Mejdoubi_CV.pdf</strong>
+          <div class="cv-buttons">
+            <a href="CV/Abderrahmane_Mejdoubi_CV.pdf" target="_blank" class="btn btn-outline">
+              <i class="fa-solid fa-eye"></i>
+              Ouvrir CV
+            </a>
+            <a href="CV/Abderrahmane_Mejdoubi_CV.pdf" download="Abderrahmane_Mejdoubi_CV.pdf" class="btn btn-primary">
+              <i class="fa-solid fa-download"></i>
+              Télécharger CV
+            </a>
+          </div>
+        </div>
+
+        <iframe class="cv-frame" src="CV/Abderrahmane_Mejdoubi_CV.pdf#toolbar=1&navpanes=0&scrollbar=1" title="CV Abderrahmane Mejdoubi"></iframe>
+
+        <div class="cv-note">
+          Si le CV ne s’affiche pas sur mobile, utilisez le bouton <strong>Ouvrir CV</strong> ou <strong>Télécharger CV</strong>.
+        </div>
       </div>
     </div>
   </section>
@@ -1176,37 +1247,6 @@
           <span>2022 – 2023</span>
           <h3>Baccalauréat Sciences Physiques</h3>
           <p>Lycée Imam Ali, Ain Beni Mathar</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section id="certifications">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-kicker">Certifications</p>
-        <h2 class="section-title">Certificats Udemy</h2>
-        <p class="section-desc">
-          Formations suivies pour renforcer mes compétences en développement logiciel, web, bases de données et outils numériques.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="tags">
-          <span class="tag">Java</span>
-          <span class="tag">C++</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Excel</span>
-          <span class="tag">HTML5</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">PHP</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Python</span>
-          <span class="tag">Git & GitHub</span>
-          <span class="tag">WPF</span>
-          <span class="tag">Bootstrap</span>
-          <span class="tag">React</span>
         </div>
       </div>
     </div>
