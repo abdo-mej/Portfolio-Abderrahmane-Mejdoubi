@@ -3,665 +3,1278 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Abderrahmane Mejdoubi</title>
+  <meta name="description" content="Portfolio professionnel d'Abderrahmane Mejdoubi, étudiant en Licence Informatique Appliquée, développeur web et logiciel à la recherche d'une alternance." />
+  <title>Abderrahmane Mejdoubi | Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    :root{
-      --bg:#050816;
-      --bg-soft:#0b1020;
-      --accent:#ff007f;
-      --accent-soft:#00d4ff;
-      --text:#ffffff;
-      --muted:#a0aec0;
-      --card:#111827;
-      --radius:18px;
-      --shadow:0 18px 45px rgba(0,0,0,.55);
-      --transition:.3s ease;
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #2563eb;
+      --accent-2: #38bdf8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --transition: 0.3s ease;
     }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:'Poppins',system-ui,-apple-system,Segoe UI,sans-serif;
-      background:radial-gradient(circle at 0% 0%,#1a2a6c 0,#050816 40%,#000 100%);
-      color:var(--text);
-      min-height:100vh;
-      overflow-x:hidden;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a{text-decoration:none;color:inherit;}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
 
     /* NAVBAR */
-    .navbar{
-      width:100%;
-      padding:18px 7vw;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      position:fixed;
-      top:0;left:0;
-      z-index:50;
-      background:linear-gradient(to bottom,rgba(5,8,22,.95),rgba(5,8,22,.7),transparent);
-      backdrop-filter:blur(16px);
-    }
-    .logo{
-      font-weight:700;
-      font-size:1.4rem;
-      letter-spacing:.08em;
-    }
-    .logo span{color:var(--accent-soft);}
-    .nav-links{
-      display:flex;
-      gap:26px;
-      font-size:.97rem;
-    }
-    .nav-links a{
-      position:relative;
-      color:var(--muted);
-      font-weight:500;
-    }
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;bottom:-6px;
-      width:0;height:2px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-soft));
-      transition:width .25s ease;
-    }
-    .nav-links a:hover,
-    .nav-links a.active{color:var(--text);}
-    .nav-links a:hover::after,
-    .nav-links a.active::after{width:100%;}
-
-    .btn-cv{
-      padding:9px 18px;
-      border-radius:999px;
-      border:none;
-      font-size:.9rem;
-      font-weight:600;
-      cursor:pointer;
-      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
-      color:#fff;
-      box-shadow:0 0 18px rgba(0,212,255,.55);
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .btn-cv i{font-size:.9rem;}
-    .btn-cv:hover{filter:brightness(1.1);}
-
-    /* HERO SECTION */
-    .hero{
-      padding:120px 7vw 80px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:40px;
-      min-height:100vh;
-    }
-    .hero-left{
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-    }
-    .photo-wrapper{
-      position:relative;
-      width:260px;
-      height:260px;
-      border-radius:999px;
-      background:radial-gradient(circle at 30% 0%,#ffffff 0,#1e40af 40%,#020617 75%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 0 60px rgba(37,99,235,.7);
-    }
-    .photo-ring{
-      position:absolute;
-      width:310px;
-      height:310px;
-      border-radius:50%;
-      border:2px solid rgba(0,212,255,.4);
-      box-shadow:0 0 40px rgba(0,212,255,.6);
-      animation:pulse 3s infinite ease-in-out;
-    }
-    .photo-inner{
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      overflow:hidden;
-      border:3px solid rgba(255,255,255,.6);
-    }
-    .photo-inner img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
 
-    @keyframes pulse{
-      0%,100%{transform:scale(1);}
-      50%{transform:scale(1.05);}
+    .nav-content {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .hero-right{
-      flex:1.1;
-      max-width:540px;
-    }
-    .hero-badge{
-      font-size:.9rem;
-      color:var(--accent-soft);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .hero-badge span{
-      width:32px;
-      height:2px;
-      background:linear-gradient(90deg,var(--accent-soft),transparent);
-    }
-    .hero-title{
-      font-size:2.4rem;
-      font-weight:700;
-      line-height:1.25;
-      margin-bottom:10px;
-    }
-    .hero-title span{color:var(--accent-soft);}
-    .hero-sub{
-      font-size:1.1rem;
-      font-weight:500;
-      margin-bottom:16px;
-      color:var(--muted);
-    }
-    .hero-sub span{color:var(--accent);}
-    .hero-text{
-      font-size:.96rem;
-      color:var(--muted);
-      max-width:480px;
-      line-height:1.7;
-      margin-bottom:24px;
-    }
-    .hero-actions{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin-bottom:18px;
-    }
-    .btn-primary,
-    .btn-outline{
-      padding:10px 24px;
-      border-radius:999px;
-      font-size:.9rem;
-      font-weight:600;
-      border:none;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      transition:var(--transition);
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
-      color:#fff;
-      box-shadow:0 0 16px rgba(255,0,127,.55);
-    }
-    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05);}
-    .btn-outline{
-      background:transparent;
-      border:1px solid rgba(148,163,184,.6);
-      color:var(--muted);
-    }
-    .btn-outline:hover{
-      border-color:var(--accent-soft);
-      color:#fff;
-      background:rgba(15,23,42,.8);
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
     }
 
-    .hero-socials{
-      display:flex;
-      gap:14px;
-      margin-top:4px;
+    .logo span {
+      color: var(--accent);
     }
-    .hero-socials a{
-      width:34px;
-      height:34px;
-      border-radius:50%;
-      border:1px solid rgba(148,163,184,.7);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--muted);
-      font-size:.9rem;
-      transition:var(--transition);
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
     }
-    .hero-socials a:hover{
-      border-color:var(--accent-soft);
-      color:#fff;
-      box-shadow:0 0 14px rgba(0,212,255,.6);
-      transform:translateY(-2px);
+
+    .nav-links a {
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white !important;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      background: #1d4ed8;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 130px 0 70px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.12), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.16), transparent 32%),
+        linear-gradient(180deg, #ffffff, #f8fafc);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      background: rgba(37, 99, 235, 0.06);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle span {
+      color: var(--accent);
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.26);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: var(--secondary);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .socials a:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 35%);
+      pointer-events: none;
+    }
+
+    .photo-box {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .quick-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+      position: relative;
+    }
+
+    .info-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 13px;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.92rem;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 0.84rem;
     }
 
     /* SECTIONS */
-    main{padding:0 7vw 50px;}
-    section{
-      margin-bottom:46px;
-    }
-    .section-card{
-      background:rgba(15,23,42,.9);
-      border-radius:var(--radius);
-      padding:26px 26px 22px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(75,85,99,.6);
-    }
-    .section-title{
-      font-size:1.4rem;
-      margin-bottom:12px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .section-title span{
-      width:22px;
-      height:3px;
-      border-radius:999px;
-      background:linear-gradient(90deg,var(--accent-soft),transparent);
-    }
-    .section-subtext{
-      font-size:.9rem;
-      color:var(--muted);
-      margin-bottom:14px;
+    section {
+      padding: 80px 0;
     }
 
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:10px;
-    }
-    .chip{
-      padding:7px 13px;
-      font-size:.85rem;
-      border-radius:999px;
-      background:rgba(15,118,110,.14);
-      color:var(--muted);
-      border:1px solid rgba(45,212,191,.35);
+    .section-head {
+      text-align: center;
+      margin-bottom: 44px;
     }
 
-    .skills-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:10px;
-    }
-    .skill-pill{
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:.83rem;
-      background:#020617;
-      border:1px solid rgba(148,163,184,.4);
-      color:var(--muted);
-      display:flex;
-      align-items:center;
-      gap:6px;
-    }
-    .skill-pill i{font-size:.9rem;color:var(--accent-soft);}
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:18px;
-      margin-top:14px;
-    }
-    .project-card{
-      background:#020617;
-      border-radius:16px;
-      padding:16px 16px 14px;
-      border:1px solid rgba(55,65,81,.8);
-      box-shadow:0 14px 35px rgba(15,23,42,.8);
-      position:relative;
-      overflow:hidden;
-      cursor:pointer;
-      transition:var(--transition);
-    }
-    .project-card:hover{
-      transform:translateY(-6px);
-      border-color:var(--accent-soft);
-      box-shadow:0 20px 45px rgba(0,212,255,.28);
-    }
-    .project-label{
-      font-size:.7rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:4px;
-    }
-    .project-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:6px;
-    }
-    .project-title{
-      font-size:1rem;
-      font-weight:600;
-    }
-    .project-tech{
-      font-size:.75rem;
-      color:var(--muted);
-    }
-    .project-desc{
-      font-size:.85rem;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-    .project-metrics{
-      font-size:.8rem;
-      color:#e5e7eb;
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
     }
 
-    .cert-list{
-      columns:2;
-      column-gap:30px;
-      font-size:.88rem;
-      color:var(--muted);
-      margin-top:10px;
-    }
-    .cert-list li{margin-bottom:6px;}
-
-    .contact-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      align-items:flex-start;
-      margin-top:10px;
-      font-size:.9rem;
-      color:var(--muted);
-    }
-    .contact-row strong{color:#e5e7eb;}
-
-    footer{
-      text-align:center;
-      padding:16px 10px 26px;
-      font-size:.8rem;
-      color:var(--muted);
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--primary);
+      margin-bottom: 12px;
     }
 
-    @media(max-width:900px){
-      .hero{
-        flex-direction:column;
-        text-align:center;
+    .section-desc {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      display: grid;
+      gap: 7px;
+    }
+
+    .card li i {
+      color: var(--accent);
+      margin-right: 7px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-card h3 i {
+      color: var(--accent);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      position: relative;
+      max-width: 980px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(var(--accent), #dbeafe);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 58px;
+      margin-bottom: 28px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 5px solid #dbeafe;
+      z-index: 2;
+    }
+
+    .experience-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .experience-card:hover {
+      transform: translateX(6px);
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+      align-items: flex-start;
+    }
+
+    .experience-top h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+
+    .date {
+      color: var(--accent);
+      font-weight: 800;
+      white-space: nowrap;
+      font-size: 0.92rem;
+    }
+
+    .role {
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .experience-card ul {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+    }
+
+    .experience-card li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(37, 99, 235, 0.08), transparent);
+      opacity: 0;
+      transition: 0.45s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-category {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-link {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* FORMATION */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .education-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .education-card span {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .education-card h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      margin-bottom: 7px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      border-radius: 32px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-list a,
+    .contact-list div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: white;
+    }
+
+    .contact-list i {
+      color: var(--accent-2);
+      width: 20px;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+      .hero-grid,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
       }
-      .hero-right{
-        order:-1;
-        align-items:center;
+
+      .skills-grid,
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .hero-actions{
-        justify-content:center;
+
+      .projects-grid {
+        grid-template-columns: 1fr;
       }
-      .hero-socials{
-        justify-content:center;
+
+      .photo-box img {
+        height: 420px;
       }
-      .hero-left{
-        margin-top:10px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: -100%;
+        width: 80%;
+        height: calc(100vh - 76px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 34px;
+        background: white;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
       }
-      .photo-wrapper{
-        width:220px;height:220px;
+
+      .nav-links.active {
+        right: 0;
       }
-      .photo-ring{
-        width:260px;height:260px;
+
+      .menu-toggle {
+        display: block;
       }
-      .nav-links{display:none;}
+
+      .nav-btn {
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .quick-info,
+      .skills-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-top {
+        flex-direction: column;
+      }
+
+      .date {
+        white-space: normal;
+      }
+
+      .contact-box {
+        padding: 26px;
+      }
     }
   </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">Portfo<span>lio</span></div>
-    <nav class="nav-links">
-      <a href="#hero" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="cv/Abderrahmane_Mejdoubi_CV2.pdf" class="btn-cv" target="_blank">
-      <i class="fa-solid fa-download"></i> Download CV
-    </a>
+    <div class="container nav-content">
+      <a href="#accueil" class="logo">Abderrahmane<span>.</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#accueil">Accueil</a>
+        <a href="#profil">Profil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-btn" href="cv/Abderrahmane_Mejdoubi_CV.pdf" target="_blank">
+          <i class="fa-solid fa-download"></i> CV
+        </a>
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-left">
-      <div class="photo-wrapper">
-        <div class="photo-ring"></div>
-        <div class="photo-inner">
-          <img src="image/mon_image.png" alt="Abderrahmane Mejdoubi">
+  <section class="hero" id="accueil">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <i class="fa-solid fa-location-dot"></i>
+          Actuellement basé au Maroc
+        </div>
+
+        <h1>Abderrahmane <span>Mejdoubi</span></h1>
+
+        <p class="hero-subtitle">
+          Développeur Web & Logiciel — <span>Recherche d’alternance</span>
+        </p>
+
+        <p class="hero-text">
+          Étudiant en Licence Informatique Appliquée – Développement Informatique à l’Université Mohammed 1er – Oujda, titulaire d’un DUT en Développement des Applications Informatiques.
+          Je recherche une alternance en développement logiciel ou web afin de mettre en pratique mes compétences en Java, Python, Laravel, React, .NET et SQL au sein d’une équipe dynamique.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i>
+            Me contacter
+          </a>
+          <a href="#projets" class="btn btn-outline">
+            <i class="fa-solid fa-folder-open"></i>
+            Voir mes projets
+          </a>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/abdo-mej" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:abderrahmane.mejdo@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://abdo-mej.github.io/Portfolio-Abderrahmane-Mejdoubi/" target="_blank" aria-label="Portfolio">
+            <i class="fa-solid fa-globe"></i>
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="hero-right">
-      <div class="hero-badge"><span></span>HELLO, I’M</div>
-      <h1 class="hero-title">Abderrahmane <span>Mejdoubi</span></h1>
-      <p class="hero-sub">And I’m a <span>Web & Software Developer</span></p>
-      <p class="hero-text">
-        Étudiant en Licence Fondamentale Informatique Appliquée, titulaire d’un DUT en Développement des Applications Informatiques (mention Bien).  
-        Passionné par le développement web, les applications desktop et l’automatisation, à la recherche d’un Master ou d’un cycle Ingénieur et d’opportunités de stage pour créer des solutions performantes et fiables.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">
-          <i class="fa-solid fa-paper-plane"></i> Hire Me
-        </a>
-        <a href="#projects" class="btn-outline">
-          <i class="fa-solid fa-eye"></i> View Projects
-        </a>
-      </div>
-
-      <div class="hero-socials">
-        <a href="https://www.instagram.com/abderahman_mejdoubi" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/share/1Arnxa8NYA/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:abderrahmane.mejdoubi23@ump.ac.ma" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      <div class="hero-card">
+        <div class="photo-box">
+          <!-- Remplace ce chemin par ton image finale -->
+          <img src="image/mon_image.png" alt="Photo professionnelle d'Abderrahmane Mejdoubi" />
+        </div>
+        <div class="quick-info">
+          <div class="info-item">
+            <strong>Profil</strong>
+            <span>Licence Informatique Appliquée</span>
+          </div>
+          <div class="info-item">
+            <strong>Objectif</strong>
+            <span>Alternance web / logiciel</span>
+          </div>
+          <div class="info-item">
+            <strong>Localisation</strong>
+            <span>Oujda, Maroc</span>
+          </div>
+          <div class="info-item">
+            <strong>Disponibilité</strong>
+            <span>France / Remote</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <main>
-    <!-- ABOUT / EXPERIENCE -->
-    <section id="about">
-      <div class="section-card">
-        <div class="section-title"><span></span>À propos & Expérience</div>
-        <p class="section-subtext">
-          Licence Fondamentale Informatique Appliquée (en cours) – Université Mohammed 1er, Oujda  
-          DUT Développement des Applications Informatiques – École Supérieure de Technologie, Oujda.
+  <!-- PROFIL -->
+  <section id="profil">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Profil</p>
+        <h2 class="section-title">Un profil orienté développement logiciel, web et systèmes d’information</h2>
+        <p class="section-desc">
+          Mon objectif est d’intégrer une entreprise en alternance pour contribuer à des projets concrets, apprendre auprès d’une équipe expérimentée et renforcer mes compétences techniques.
         </p>
-        <div class="chips">
-          <div class="chip">Stage – Application de gestion de paie multi-sociétés (MULTICODE TECH)</div>
-          <div class="chip">Stage – Application web de location de voitures (LAHLAL CAR)</div>
-          <div class="chip">PFE – Site web vitrine pour un menuisier</div>
-          <div class="chip">Application desktop WPF – Gestion des bons de commande</div>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3>Formation actuelle</h3>
+          <p>
+            Étudiant en Licence Fondamentale Informatique Appliquée – Développement Informatique à l’Université Mohammed 1er – Oujda, actuellement en S6.
+            J’ai étudié Java, Python et Flutter en S5, puis Laravel, Linux et SQL avancé en S6.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Recherche d’alternance</h3>
+          <p>
+            Actuellement basé au Maroc, je recherche une alternance en développement web ou logiciel, avec une forte motivation pour rejoindre une équipe dynamique en France ou en remote.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-card">
-        <div class="section-title"><span></span>Skills & Technologies</div>
-        <p class="section-subtext">
-          Solide base en développement web, applications desktop, bases de données et modélisation, renforcée par plusieurs certificats Udemy.
+  <!-- COMPETENCES -->
+  <section id="competences">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Compétences</p>
+        <h2 class="section-title">Stack technique</h2>
+        <p class="section-desc">
+          Compétences adaptées à mon CV : développement web, desktop, mobile, bases de données, systèmes et outils professionnels.
         </p>
-        <div class="skills-grid">
-          <div class="skill-pill"><i class="fab fa-html5"></i>HTML5 / CSS3</div>
-          <div class="skill-pill"><i class="fab fa-js"></i>JavaScript</div>
-          <div class="skill-pill"><i class="fab fa-php"></i>PHP</div>
-          <div class="skill-pill"><i class="fas fa-database"></i>SQL, MySQL, SQL Server, Oracle</div>
-          <div class="skill-pill"><i class="fab fa-bootstrap"></i>Bootstrap</div>
-          <div class="skill-pill"><i class="fab fa-react"></i>React</div>
-          <div class="skill-pill"><i class="fab fa-java"></i>Java (POO avancée)</div>
-          <div class="skill-pill"><i class="fa-solid fa-code"></i>C / C++</div>
-          <div class="skill-pill"><i class="fa-solid fa-laptop-code"></i>C#, .NET, WPF</div>
-          <div class="skill-pill"><i class="fa-solid fa-diagram-project"></i>UML / Merise</div>
-          <div class="skill-pill"><i class="fab fa-git-alt"></i>Git & GitHub</div>
-          <div class="skill-pill"><i class="fa-solid fa-chart-line"></i>Reporting & Dashboards</div>
-          <div class="skill-pill"><i class="fa-solid fa-shield-halved"></i>Sécurité & gestion des droits</div>
-          <div class="skill-pill"><i class="fa-solid fa-language"></i>Français B2 · Anglais Intermédiaire · Arabe Natif</div>
-        </div>
       </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="section-card">
-        <div class="section-title"><span></span>Services</div>
-        <p class="section-subtext">Ce que tu peux proposer aux entreprises et clients.</p>
-        <div class="chips">
-          <div class="chip">Développement d’applications web sur mesure</div>
-          <div class="chip">Applications desktop C#/.NET & WPF</div>
-          <div class="chip">Automatisation & digitalisation de processus métiers</div>
-          <div class="chip">Conception et optimisation de bases de données</div>
-          <div class="chip">Intégration de paiements en ligne & formulaires sécurisés</div>
-          <div class="chip">Tableaux de bord & reporting décisionnel</div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3><i class="fa-solid fa-code"></i> Langages</h3>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">C#</span>
+            <span class="tag">Dart</span>
+            <span class="tag">SQL</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-card">
-        <div class="section-title"><span></span>Portfolio Projects</div>
-        <p class="section-subtext">
-          Sélection de projets académiques et de stage, avec focus sur l’impact métier et la stack utilisée.
-        </p>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-label">Stage – LAHLAL CAR</div>
-            <div class="project-header">
-              <div class="project-title">Gestion de location de voitures</div>
-              <div class="project-tech">HTML · CSS · JS · PHP · SQL</div>
-            </div>
-            <p class="project-desc">
-              Application web pour digitaliser la gestion des clients, véhicules, réservations et contrats, avec génération PDF sécurisée.
-            </p>
-            <p class="project-metrics">
-              • Automatisation de la gestion de dizaines de réservations mensuelles  
-              • Réduction du temps de création des contrats de ~15 min à quelques minutes  
-              • Accès sécurisé par rôles (admin / agent).
-            </p>
+        <div class="skill-card">
+          <h3><i class="fa-solid fa-globe"></i> Web</h3>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">React</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">AJAX</span>
           </div>
+        </div>
 
-          <div class="project-card">
-            <div class="project-label">PFE – Site vitrine</div>
-            <div class="project-header">
-              <div class="project-title">Site web pour menuisier</div>
-              <div class="project-tech">HTML · CSS · JS · PHP · Bootstrap</div>
-            </div>
-            <p class="project-desc">
-              Site vitrine responsive avec galerie de réalisations, formulaire de contact, et intégration des paiements en ligne.
-            </p>
-            <p class="project-metrics">
-              • Mise en avant de dizaines de projets via une galerie optimisée  
-              • Formulaire sécurisé avec validation et anti‑spam  
-              • Intégration ZeroBounce / Stripe pour une expérience complète.
-            </p>
+        <div class="skill-card">
+          <h3><i class="fa-solid fa-database"></i> Bases de données</h3>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">PL/SQL</span>
+            <span class="tag">UML</span>
+            <span class="tag">Merise</span>
           </div>
+        </div>
 
-          <div class="project-card">
-            <div class="project-label">Projet Desktop</div>
-            <div class="project-header">
-              <div class="project-title">Gestion des bons de commande</div>
-              <div class="project-tech">C# · WPF · SQL Server</div>
-            </div>
-            <p class="project-desc">
-              Application desktop multi‑utilisateurs pour gérer bons de commande, règlements, factures et reporting.
-            </p>
-            <p class="project-metrics">
-              • Centralisation des opérations d’achat sur une base unique  
-              • Interface moderne avec navigation animée et filtres  
-              • Export PDF / Excel pour le suivi et l’audit.
-            </p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-label">Stage – MULTICODE TECH</div>
-            <div class="project-header">
-              <div class="project-title">Paie multi‑sociétés</div>
-              <div class="project-tech">C# · .NET · SQL Server</div>
-            </div>
-            <p class="project-desc">
-              Application de gestion de paie permettant de traiter plusieurs sociétés avec génération automatique des bulletins.
-            </p>
-            <p class="project-metrics">
-              • Automatisation du calcul des salaires et cotisations  
-              • Gestion avancée des droits utilisateurs (RBAC)  
-              • Génération de rapports et exports sécurisés.
-            </p>
+        <div class="skill-card">
+          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Outils</h3>
+          <div class="tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">WPF</span>
+            <span class="tag">.NET</span>
+            <span class="tag">Visual Studio</span>
+            <span class="tag">VS Code</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CERTIFICATS -->
-    <section id="certificats">
-      <div class="section-card">
-        <div class="section-title"><span></span>Certificats Udemy</div>
-        <p class="section-subtext">
-          Formations en ligne suivies pour renforcer les compétences techniques.
+  <!-- EXPERIENCES -->
+  <section id="experiences">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Expériences</p>
+        <h2 class="section-title">Expériences professionnelles & projets</h2>
+        <p class="section-desc">
+          Expériences alignées avec mon CV : applications desktop, web, automatisation, gestion métier et bases de données.
         </p>
-        <ul class="cert-list">
-          <li>Java</li>
-          <li>C++</li>
-          <li>CSS</li>
-          <li>Excel</li>
-          <li>HTML5</li>
-          <li>JavaScript</li>
-          <li>PHP</li>
-          <li>SQL</li>
-          <li>Python</li>
-          <li>Git & GitHub</li>
-          <li>WPF</li>
-          <li>Bootstrap</li>
-          <li>React</li>
-          <li>Gestion de projet (divers cours)</li>
-        </ul>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-card">
-        <div class="section-title"><span></span>Contact</div>
-        <div class="contact-row">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="experience-top">
+              <h3>STE LAHLAL SAMU PLUS</h3>
+              <span class="date">Juin 2025 – Septembre 2025</span>
+            </div>
+            <p class="role">Développeur Full-Stack — Application de gestion des bons de commande (C#, .NET, SQL Server)</p>
+            <ul>
+              <li>Développement d’une application desktop multi-utilisateurs.</li>
+              <li>Gestion des bons de commande, règlements et factures.</li>
+              <li>Création d’une interface moderne, dynamique et sécurisée.</li>
+              <li>Mise en place du reporting pour faciliter le suivi des opérations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="experience-top">
+              <h3>MULTICODE TECH</h3>
+              <span class="date">Avril 2025 – Mai 2025</span>
+            </div>
+            <p class="role">Développeur Stagiaire — Application de gestion de paie (C#, .NET, SQL Server)</p>
+            <ul>
+              <li>Développement d’une application de gestion de paie multi-sociétés.</li>
+              <li>Automatisation des traitements et génération des bulletins.</li>
+              <li>Mise en place d’une gestion avancée des droits utilisateurs.</li>
+              <li>Interface ergonomique et reporting personnalisé.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="experience-top">
+              <h3>Projet de fin d’études</h3>
+              <span class="date">Mars 2025 – Avril 2025</span>
+            </div>
+            <p class="role">Développeur Web — Site vitrine responsive (HTML, CSS, JS, PHP, Bootstrap, ZeroBounce, Stripe)</p>
+            <ul>
+              <li>Création d’une plateforme web complète pour un menuisier.</li>
+              <li>Gestion des commandes et des produits.</li>
+              <li>Développement d’un espace administrateur ergonomique.</li>
+              <li>Intégration d’un paiement en ligne sécurisé avec Stripe.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-card">
+            <div class="experience-top">
+              <h3>LAHLAL CAR SARL/AU</h3>
+              <span class="date">Août 2024 – Septembre 2024</span>
+            </div>
+            <p class="role">Développeur Stagiaire — Application de gestion de location de voitures (HTML, CSS, JS, PHP, SQL)</p>
+            <ul>
+              <li>Développement d’une application web de gestion de location.</li>
+              <li>Automatisation de la gestion des clients, véhicules, réservations et contrats.</li>
+              <li>Génération de documents PDF.</li>
+              <li>Sécurisation des accès utilisateurs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Portfolio</p>
+        <h2 class="section-title">Projets principaux</h2>
+        <p class="section-desc">
+          Une sélection de projets qui montrent mes compétences en développement web, desktop, bases de données et automatisation.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <span class="project-category">Desktop · C# · .NET</span>
+          <h3>Gestion des bons de commande</h3>
+          <p>
+            Application desktop multi-utilisateurs développée pour STE LAHLAL SAMU PLUS, permettant la gestion des bons de commande, règlements, factures et reporting.
+          </p>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">.NET</span>
+            <span class="tag">WPF</span>
+            <span class="tag">SQL Server</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-category">Desktop · Paie</span>
+          <h3>Gestion de paie multi-sociétés</h3>
+          <p>
+            Application permettant d’automatiser les traitements de paie, générer les bulletins, gérer les droits utilisateurs et produire des rapports personnalisés.
+          </p>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">.NET</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Reporting</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-category">Web · PFE</span>
+          <h3>Site web vitrine pour menuisier</h3>
+          <p>
+            Plateforme web responsive avec gestion des commandes, espace administrateur, catalogue de produits, validation d’e-mails et paiement sécurisé.
+          </p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Stripe</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-category">Web · Location</span>
+          <h3>Gestion de location de voitures</h3>
+          <p>
+            Application web pour gérer les clients, véhicules, réservations, contrats et documents PDF, avec sécurisation des accès utilisateurs.
+          </p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">SQL</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section id="formation">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Formation</p>
+        <h2 class="section-title">Parcours académique</h2>
+      </div>
+
+      <div class="education-grid">
+        <div class="education-card">
+          <span>2025 – Présent</span>
+          <h3>Licence Fondamentale – Informatique Appliquée</h3>
+          <p>Développement Informatique — Université Mohammed 1er, Oujda</p>
+        </div>
+
+        <div class="education-card">
+          <span>2023 – 2025</span>
+          <h3>DUT – Développement des Applications Informatiques</h3>
+          <p>École Supérieure de Technologie, Oujda — Mention Bien</p>
+        </div>
+
+        <div class="education-card">
+          <span>2022 – 2023</span>
+          <h3>Baccalauréat Sciences Physiques</h3>
+          <p>Lycée Imam Ali, Ain Beni Mathar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Certifications</p>
+        <h2 class="section-title">Certificats Udemy</h2>
+        <p class="section-desc">
+          Formations suivies pour renforcer mes compétences en développement logiciel, web, bases de données et outils numériques.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">C++</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Excel</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">PHP</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">Git & GitHub</span>
+          <span class="tag">WPF</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <p class="section-kicker" style="color:#38bdf8;">Contact</p>
+          <h2>Disponible pour une alternance en développement web ou logiciel</h2>
+          <p>
+            Actuellement basé à Oujda, Maroc. Disponible pour échanger à propos d’une opportunité d’alternance, de stage ou de collaboration technique.
+          </p>
+        </div>
+
+        <div class="contact-list">
+          <a href="mailto:abderrahmane.mejdo@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            abderrahmane.mejdo@gmail.com
+          </a>
+          <a href="tel:+212655369071">
+            <i class="fa-solid fa-phone"></i>
+            +212 6 55 36 90 71
+          </a>
           <div>
-            <p><strong>Email :</strong> <a href="mailto:abderrahmane.mejdoubi23@ump.ac.ma">abderrahmane.mejdoubi23@ump.ac.ma</a></p>
-            <p><strong>Téléphone :</strong> 06 55 36 90 71</p>
-            <p><strong>Adresse :</strong> H12, Hay Riyad, Oujda – Maroc</p>
+            <i class="fa-solid fa-location-dot"></i>
+            Oujda, Maroc
           </div>
-          <div>
-            <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank">/in/abderrahmane-mejdoubi-3534a7339</a></p>
-            <p><strong>Portfolio :</strong> <a href="https://abdo-mej.github.io/Portfolio-Abderrahmane-Mejdoubi/" target="_blank">abdo‑mej.github.io</a></p>
-          </div>
-        </div>
-        <div class="hero-socials" style="margin-top:16px;">
-          <a href="https://www.instagram.com/abderrahman_mejdoubi" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/share/1Arnxa8NYA/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:abderrahmane.mejdoubi23@ump.ac.ma" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/abderrahmane-mejdoubi-3534a7339" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a href="https://github.com/abdo-mej" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Abderrahmane Mejdoubi – Portfolio personnel
+    <div class="container">
+      © 2026 Abderrahmane Mejdoubi — Portfolio professionnel
+    </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      const icon = menuToggle.querySelector("i");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-xmark");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.add("fa-bars");
+        icon.classList.remove("fa-xmark");
+      });
+    });
+  </script>
 </body>
 </html>
