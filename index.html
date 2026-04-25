@@ -832,11 +832,13 @@
       .date {
         white-space: normal;
       }
-      .photo-circle-inner img {
+  .photo-circle-inner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+
+  /* 🔥 solution qui marche toujours */
+  transform: translateY(-20px);
 }
 
       .contact-box {
